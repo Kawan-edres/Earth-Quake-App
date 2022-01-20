@@ -5,7 +5,14 @@ import { useEffect, useState } from "react";
 
 function Home() {
   const [earthQuake, setEarthQuake] = useState([
-    {properties: {place: "Ebil", time: "3223323"}}
+    {properties:
+       {
+        place: "10km WNW of The Geysers, CA",
+        time: "1642025636650",
+
+      
+      
+      }}
 
   ]);
   const updateEarthQuake = async () => {
@@ -13,7 +20,7 @@ function Home() {
       "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-01-01&limit=10"
     );
     const data = await result.json();
-    console.log(data);
+    
   
     setEarthQuake(data.features);
   };
